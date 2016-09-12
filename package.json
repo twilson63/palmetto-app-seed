@@ -1,0 +1,43 @@
+{
+  "name": "palmetto-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test",
+    "build": "browserify browser.js -o bundle.js",
+    "watch": "watchify browser.js -o bundle.js",
+    "start": "node server.js",
+    "dev": "npm run watch & npm start",
+    "lint": "standard"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "standard": "^8.0.0",
+    "tape": "^4.6.0",
+    "watchify": "^3.7.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "filed": "^0.1.0",
+    "palmetto": "^2.0.1",
+    "server-summary": "^6.0.1"
+  }
+}
